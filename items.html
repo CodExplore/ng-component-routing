@@ -1,3 +1,5 @@
-<li ng-repeat="i in $ctrl.itemData">
-	{{i.name}}
-</li>
+<ul>
+	<li ng-repeat="item in $ctrl.itemsData">
+		{{item.short_name}} - {{item.name}}
+	</li>
+</ul>

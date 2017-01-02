@@ -15,9 +15,9 @@
 	itemControl.$inject = ['itemData'];
 
 	function itemControl(itemData) {
-		var itemDetails = this;
-		itemDetails.itemData = itemData;
-		console.log("hello items");
+		var itemLabel = this;
+
+		itemLabel.itemsData = itemData;
 	}
 
 })();

@@ -29,14 +29,17 @@
 			}).state('items', {
 				url: '/items/{itemId}',
 				templateUrl: 'item-details.html',
-				controller: 'itemControl as itemDetails',
+				controller: 'itemControl as itemLabel',
 				resolve: {
 					itemData: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
-						return MenuDataService.getItemsForCategory().then(function (items) {
-							return items[$stateParams.itemId];
+
+						var response = MenuDataService.getItemsForCategory($stateParams.itemId);
+
+						return response.then(function (response) {
+							return response;
 
 						});
-				}]
+						}]
 				}
 			});
 	}

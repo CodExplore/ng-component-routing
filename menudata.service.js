@@ -24,18 +24,12 @@
 			});
 		};
 		service.getItemsForCategory = function (categoryShortName) {
-			console.log("inside item");
-			var response = $http({
+
+			return $http({
 				method: "GET",
-				url: (ApiBase + "/menu_items.json?category=" + categoryShortName)
-			});
-
-			return response.then(function (response) {
-				foundItems = response.data.menu_items;
-
-				console.log("FoundItems data", foundItems);
-				return foundItems;
-
+				url: (ApiBase + "/menu_items.json?category=" + categoryShortName),
+			}).then(function (response) {
+				return response.data.menu_items;
 			});
 		};
 	}
